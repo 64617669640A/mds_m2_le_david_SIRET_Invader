@@ -1,0 +1,21 @@
+{
+  "name": "mds_m2_le_david_siret_invader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "split": "node src/scripts/splitCSV.js",
+    "start": "node src/scripts/pm2Connect.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parser": "^2.3.3",
+    "csv-split-stream": "^1.0.2",
+    "dotenv": "^8.2.0",
+    "fs": "0.0.1-security",
+    "mongoose": "^5.10.9",
+    "node-core-lib": "^0.11.11",
+    "pm2": "^4.4.1"
+  }
+}
