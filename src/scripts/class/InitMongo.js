@@ -27,18 +27,21 @@ class InitMongo {
         })
     }
 
-    readFile()
+    readFile() {
+       // fs.createReadStream()
+
+    }
 
     bulk() {
-        //SiretModel.bulkWrite(items.map(i => (
-            // insertOne: {
-            //     document: {
-            //         //siren:'',
-            //
-            //     }
-            //
-            // }
-        //)))
+    //     SiretModel.bulkWrite(items.map(i => (
+    //         insertOne: {
+    //             document: {
+    //                 //siren:'',
+    //
+    //             }
+    //
+    //         }
+    //     )))
     }
 
 }

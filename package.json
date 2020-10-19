@@ -5,7 +5,9 @@
   "main": "src/app.js",
   "scripts": {
     "split": "node src/scripts/splitCSV.js",
-    "start": "node src/scripts/pm2Connect.js"
+    "start": "pm2 start ecosystem.config.js",
+    "restart": "pm2 restart ecosystem.config.js",
+    "stop": "pm2 stop ecosystem.config.js"
   },
   "author": "",
   "license": "ISC",
