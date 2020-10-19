@@ -16,7 +16,7 @@ const SiretSchema = new Schema({
         type: String
     },
     dateCreationEtablissement: {
-        type: Date
+        type: String
     },
     trancheEffectifsEtablissement: {
         type: String
@@ -28,13 +28,13 @@ const SiretSchema = new Schema({
         type: String
     },
     dateDernierTraitementEtablissement: {
-        type: Date
+        type: String
     },
     etablissementSiege: {
-        type: Boolean
+        type: String
     },
     nombrePeriodesEtablissement: {
-        type: Number
+        type: String
     },
     complementAdresseEtablissement: {
         type: String
@@ -121,7 +121,7 @@ const SiretSchema = new Schema({
         type: String
     },
     dateDebut: {
-        type: Date
+        type: String
     },
     etatAdministratifEtablissement: {
         type: String

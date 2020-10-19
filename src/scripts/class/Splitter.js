@@ -21,7 +21,6 @@ class Splitter {
      * Check If dir exist before split CSV app file.
      */
     splitCSV(filepath, checkDir, lineLimit) {
-
         fs.readdir(checkDir, (err, files) => {
             if (err) {
                 console.log('File doesn\'t exist');

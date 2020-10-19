@@ -20,12 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a217c62-69f7-4b0c-84d2-efad0020061e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scripts/class/InitMongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/class/InitMongo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scripts/pm2Connect.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/class/Splitter.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/scripts/class/Splitter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scripts/splitCSV.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +38,12 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
   </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="ProjectId" id="1j4LcrRkWaICOJomwBjcvSTlQEa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -49,11 +55,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/node_modules" />
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -65,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603058499979</updated>
-      <workItem from="1603058501674" duration="6623000" />
+      <workItem from="1603058501674" duration="9316000" />
     </task>
     <servers />
   </component>
@@ -88,10 +95,18 @@
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="588" y="310" key="#JavaScript/0.0.1680.1050@0.0.1680.1050" timestamp="1603063952404" />
+    <state x="304" y="259" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603093952815">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="304" y="259" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603093952815" />
     <state x="580" y="348" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603064369595">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="580" y="348" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1603064369595" />
+    <state x="217" y="218" key="SettingsEditor" timestamp="1603094229034">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="217" y="218" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1603094229034" />
     <state x="507" y="282" key="run.anything.popup" timestamp="1603062269662">
       <screen x="0" y="0" width="1680" height="1050" />
     </state>

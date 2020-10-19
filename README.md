@@ -8,21 +8,18 @@ design of a high-volume mongodb indexer using open data gouv
 npm install --save
 ```
 
-
-
-
 ## Start
 Split CSV before start
 ```bash
-npm split
+npm run split
 ```
 
 Run
 ```bash
-npm start
+npm run start
 ```
 
 Stop
 ```bash
-npm stop
+npm run stop
 ```

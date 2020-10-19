@@ -6,7 +6,10 @@ const initMongo = new InitMongo()
 
 initMongo.dbConnect()
 
-initMongo.bulk()
+initMongo.readFileAndParse()
+
+//initMongo.bulk()
+
 
 
 
