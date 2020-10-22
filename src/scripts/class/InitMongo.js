@@ -4,19 +4,13 @@ const fs = require('fs');
 const SiretModel = require('../../data-model/siretModel')
 const formatter = require('../formatter');
 const { bulkWrite } = require('../../data-model/siretModel');
-const pm2 = require('pm2')
-const  fastcsv  =  require ( 'fast-csv' ) ;
 
 require ('dotenv/config');
 class InitMongo {
     constructor() {
-        this.pathArray = [];
     }
 
-    setCSVData(data) {
-        return this.state.csvData.push(data)
-    }
-
+    // Connexion en base
     dbConnect() {
         mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
             .then(() => {
@@ -38,11 +32,24 @@ class InitMongo {
         })
     }
 
+    // Promise wrapping
+    readFileAsync(path) {
+        new Promise((resolve, reject) => {
+            fs.createReadStream((path) => {
+              if (err) reject(err)
+              else resolve(data)
+            })
+        })
+    }
+
+    // Permet de lire les fichiers via un chemin, formate le csv et l'insert en base.
     async readFileAndInsert(path) {
         const csvData = [];
-        //console.log(path)
-        await Promise.all([
-            fs.createReadStream(path)
+        console.log(path)
+        //await Promise.all([
+        //const promise = new Promise(function(resolv, reject) {
+            //fs.createReadStream(path)
+        await this.readFileAsync(path)
             .pipe(
                 parse({
                     delimeter: ','
@@ -50,7 +57,6 @@ class InitMongo {
             )
             .on('data', function (dataRow) {
                 csvData.push(dataRow)
-                console.log(csvData)
             })
             .on('end', function () {
                 const buffer = []
@@ -58,6 +64,7 @@ class InitMongo {
                     buffer.push({insertOne: { "document": formatter(data) }})
                 }
 
+                // Insert en base
                 SiretModel
                 .bulkWrite(buffer)
                 .then((ok) => {
@@ -65,8 +72,9 @@ class InitMongo {
                 })
                 .catch(e => console.error(e))
             })
-        ])
-
+        //})
+        //return promise;
+        //])
     }
 }
 

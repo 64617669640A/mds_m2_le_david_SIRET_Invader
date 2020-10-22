@@ -21,9 +21,6 @@ class Splitter {
      * Check If dir exist before split CSV app file.
      */
     splitCSV(filepath, checkDir, lineLimit) {
-
-        //TODO : Vérifier si data-csv est non vide
-
         csvSplitStream.split(
             fs.createReadStream(filepath),
             {
