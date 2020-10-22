@@ -2,11 +2,15 @@ const mongoose = require('mongoose');
 const parse = require('csv-parse');
 const fs = require('fs');
 const SiretModel = require('../../data-model/siretModel')
-const formatter = require('../formatter')
+const formatter = require('../formatter');
+const { bulkWrite } = require('../../data-model/siretModel');
+const pm2 = require('pm2')
+const  fastcsv  =  require ( 'fast-csv' ) ;
 
 require ('dotenv/config');
 class InitMongo {
     constructor() {
+        this.pathArray = [];
     }
 
     setCSVData(data) {
@@ -14,7 +18,7 @@ class InitMongo {
     }
 
     dbConnect() {
-        mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true })
+        mongoose.connect(process.env.DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
             .then(() => {
                 console.log('mongodb connected.');
             })
@@ -34,9 +38,11 @@ class InitMongo {
         })
     }
 
-    readFileAndParse() {
+    async readFileAndInsert(path) {
         const csvData = [];
-        fs.createReadStream(process.env.CSV_DIR + '/output-0.csv')
+        //console.log(path)
+        await Promise.all([
+            fs.createReadStream(path)
             .pipe(
                 parse({
                     delimeter: ','
@@ -44,21 +50,22 @@ class InitMongo {
             )
             .on('data', function (dataRow) {
                 csvData.push(dataRow)
+                console.log(csvData)
             })
             .on('end', function () {
+                const buffer = []
+                for (let data of csvData) {
+                    buffer.push({insertOne: { "document": formatter(data) }})
+                }
+
                 SiretModel
-                .bulkWrite(csvData.map(i => ({
-                  insertOne: {
-                    document: formatter(i)
-                  }
-                })))
+                .bulkWrite(buffer)
                 .then((ok) => {
-                    //console.log('insert')
-                    //console.log(ok);
+                    console.log('insert on database done')
                 })
                 .catch(e => console.error(e))
-
             })
+        ])
 
     }
 }

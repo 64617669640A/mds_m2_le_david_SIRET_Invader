@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const formatter = require('../scripts/formatter')
 
 const Schema = mongoose.Schema
 
@@ -147,7 +148,8 @@ const SiretSchema = new Schema({
     caractereEmployeurEtablissement: {
         type: String
     }
-})
+
+}, {strict: false, collection: 'siret'})
 
 const SiretModel = mongoose.model('Siret', SiretSchema)
 
